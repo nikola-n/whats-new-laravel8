@@ -50,6 +50,14 @@ There is a queueable function that allow us to queue the event.
 New travel method for testing that can print dates in the future and check
 if the condition is met.
 
+- Improved Rate limiting 
+New configureRateLimiting method in RouteServiceProvider where you can specify
+the number of api request
+You can add new RateLimiters for ex. Downloads and also per user.
+
+- Jetstream
+
+
 #New things that I learned
 - ls database/migrations | wc -l 
 It counts the files in the folder

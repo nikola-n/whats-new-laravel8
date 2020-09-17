@@ -57,5 +57,12 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60);
         });
+        //you can add another RateLimiter for ex. Downloads
+
+        RateLimiter::for('downloads', function ($request) {
+            //this can be set per user
+            //if user purchased forever downloads
+            return $request->user()->isForever() ? Limit::none() : Limit::perMinute(2);
+        });
     }
 }
